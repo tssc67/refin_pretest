@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -37,48 +38,37 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "axios", "jsdom"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    var axios_1 = __importDefault(require("axios"));
-    var jsdom_1 = require("jsdom");
-    var query = process.argv[2];
-    if (!query) {
-        process.exit(0);
-    }
-    function run() {
-        return __awaiter(this, void 0, void 0, function () {
-            var res, html, dom, tbody, _i, _a, tr;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4, axios_1.default.get("https://codequiz.azurewebsites.net/", { withCredentials: true, headers: { cookie: "hasCookie=true" } })];
-                    case 1:
-                        res = _b.sent();
-                        html = res.data;
-                        dom = new jsdom_1.JSDOM(html);
-                        tbody = dom.window.document.querySelector('tbody');
-                        for (_i = 0, _a = tbody.children; _i < _a.length; _i++) {
-                            tr = _a[_i];
-                            if (tr.children[0].innerHTML.trim().toString() === query.trim()) {
-                                console.info(tr.children[1].innerHTML);
-                            }
-                            else {
-                                continue;
-                            }
+Object.defineProperty(exports, "__esModule", { value: true });
+var axios_1 = __importDefault(require("axios"));
+var jsdom_1 = require("jsdom");
+var query = process.argv[2];
+if (!query) {
+    process.exit(0);
+}
+function run() {
+    return __awaiter(this, void 0, void 0, function () {
+        var res, html, dom, tbody, _i, _a, tr;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4, axios_1.default.get("https://codequiz.azurewebsites.net/", { withCredentials: true, headers: { cookie: "hasCookie=true" } })];
+                case 1:
+                    res = _b.sent();
+                    html = res.data;
+                    dom = new jsdom_1.JSDOM(html);
+                    tbody = dom.window.document.querySelector('tbody');
+                    for (_i = 0, _a = tbody.children; _i < _a.length; _i++) {
+                        tr = _a[_i];
+                        if (tr.children[0].innerHTML.trim().toString() === query.trim()) {
+                            console.info(tr.children[1].innerHTML);
                         }
-                        return [2];
-                }
-            });
+                        else {
+                            continue;
+                        }
+                    }
+                    return [2];
+            }
         });
-    }
-    run();
-});
+    });
+}
+run();
 //# sourceMappingURL=index.js.map
