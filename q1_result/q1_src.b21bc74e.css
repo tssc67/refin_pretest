@@ -1,0 +1,22 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  display: flex;
+  width: 100%;
+  min-width: 600px;
+}
+#main #first-section {
+  width: 200px;
+}
+#main #mid-section {
+  min-width: 100px;
+  flex: 1;
+}
+#main #last-section {
+  width: 300px;
+}
+
+/*# sourceMappingURL=q1_src.b21bc74e.css.map */
