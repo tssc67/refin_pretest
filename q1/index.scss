@@ -1,0 +1,21 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+#main {
+    display: flex;
+    width: 100%;
+    min-width: 600px;
+    #first-section {
+        width: 200px;
+    }
+    
+    #mid-section {
+        min-width: 100px;
+        flex: 1;
+    }
+    
+    #last-section {
+        width: 300px;
+    }
+}
