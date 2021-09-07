@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "skipLibCheck": true,
+        "preserveConstEnums": true,
+        "outDir": "./build",
+        "sourceMap": true,
+        "inlineSources": true,
+        "moduleResolution": "Node",
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "target": "ES2018",
+        "lib": [
+            "es2016"
+        ],
+        "jsx": "react"
+    },
+    "include": [
+        "src/**/*",
+        "index.d.ts",
+        "express.d.ts",
+        "global.d.ts",
+        "*.d.ts",
+        "types/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "q3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jsdom": "^16.2.13",
+    "axios": "^0.21.4",
+    "jsdom": "^17.0.0"
+  }
+}
